@@ -10,17 +10,33 @@ let _api = axios.create({
 
 export default new Vuex.Store({
   state: {
-    games: []
+    games: [],
+    activeGame: {}
   },
   mutations: {
     setGames(state, payload) {
       state.games = payload
+    },
+    setActiveGame(state, payload) {
+      state.activeGame = payload
     }
   },
   actions: {
     async getGames({ commit, dispatch }) {
-      let res = await _api.get('games')
-      commit('setGames', res.data)
+      try {
+        let res = await _api.get('games')
+        commit('setGames', res.data)
+      } catch (error) {
+
+      }
+    },
+    async getGameById({ commit, dispatch }, payload) {
+      try {
+        let res = await _api.get('games/' + payload.gameId)
+        commit('setActiveGame', res.data)
+      } catch (error) {
+
+      }
     }
   }
 })
