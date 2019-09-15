@@ -1,7 +1,9 @@
 <template>
   <div class="games container-fluid">
     <h3 class="mt-4">Current Titles</h3>
-    <Game v-for="game in games" :key="game._id" :gameProps="game" />
+    <div class="row">
+      <Game v-for="game in games" :key="game._id" :gameProps="game" />
+    </div>
   </div>
 </template>
 

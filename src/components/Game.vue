@@ -1,6 +1,9 @@
 <template>
-  <div class="game">
-    <h1>{{gameProps.title}}</h1>
+  <div class="game col-4">
+    <h4>{{gameProps.title}}</h4>
+    <img :src="gameProps.coverImg" class="img-fluid" />
+    <h5>${{gameProps.price}} - ESRB:{{gameProps.rating}}</h5>
+    <p>{{gameProps.description}}</p>
   </div>
 </template>
 
