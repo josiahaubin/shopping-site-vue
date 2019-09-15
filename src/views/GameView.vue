@@ -6,6 +6,8 @@
         <img :src="game.coverImg" class="img-fluid" />
         <h5 class="mt-1">${{game.price}} - ESRB:{{game.rating}}</h5>
         <p>{{game.description}}</p>
+        <small>Hurry! Only {{game.quantity + 1}} Left!!</small>
+        <button class="btn btn-success ml-2" @click="orderGame()">Order</button>
       </div>
     </div>
   </div>
@@ -26,7 +28,14 @@ export default {
       return this.$store.state.activeGame;
     }
   },
-  methods: {},
+  methods: {
+    orderGame() {
+      this.$store.dispatch("orderGame", {
+        gameId: this.$route.params.gameId,
+        quantity: this.game.quantity--
+      });
+    }
+  },
   components: {}
 };
 </script>

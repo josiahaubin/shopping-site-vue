@@ -37,6 +37,16 @@ export default new Vuex.Store({
       } catch (error) {
 
       }
+    },
+    async orderGame({ commit, dispatch }, payload) {
+      try {
+        let res = await _api.put('games/' + payload.gameId, { quantity: payload.quantity })
+        console.log(res.data)
+        // dispatch('setActiveGame', res.data)
+        // commit('setActiveGame', res.data)
+      } catch (error) {
+
+      }
     }
   }
 })
