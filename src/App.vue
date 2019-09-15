@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
+      <h1>Nerd's-R-Us</h1>
       <router-link to="/">Games</router-link>|
       <router-link to="/about">About</router-link>
     </div>
