@@ -1,6 +1,6 @@
 <template>
   <div class="games container-fluid">
-    <h3 class="mt-4">Current Titles</h3>
+    <h3 class="my-4">Current Titles</h3>
     <div class="row">
       <Game v-for="game in games" :key="game._id" :gameProps="game" />
     </div>

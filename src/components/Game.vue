@@ -1,5 +1,5 @@
 <template>
-  <div class="game col-4">
+  <div class="game col-4 border rounded">
     <h4>{{gameProps.title}}</h4>
     <img :src="gameProps.coverImg" class="img-fluid" />
     <h5>${{gameProps.price}} - ESRB:{{gameProps.rating}}</h5>
@@ -24,4 +24,7 @@ export default {
 
 
 <style scoped>
+p {
+  text-align: left;
+}
 </style>
